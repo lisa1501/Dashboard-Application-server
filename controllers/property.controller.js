@@ -96,7 +96,32 @@ const createProperty = async (req, res) => {
     }
 };
 
-const updateProperty = async (req, res) => {};
+const updateProperty = async (req, res) => {
+    try {
+        const { id } = req.params;
+        const { title, description, propertyType, location, price, photo } =
+            req.body;
+
+        const photoUrl = await cloudinary.uploader.upload(photo);
+
+        await Property.findByIdAndUpdate(
+            { _id: id },
+            {
+                title,
+                description,
+                propertyType,
+                location,
+                price,
+                photo: photoUrl.url || photo,
+            },
+        );
+
+        res.status(200).json({ message: "Property updated successfully" });
+    } catch (error) {
+        res.status(500).json({ message: error.message });
+    }
+};
+
 const deleteProperty = async (req, res) => {
     try {
         const { id } = req.params;
@@ -111,9 +136,9 @@ const deleteProperty = async (req, res) => {
         session.startTransaction();
 
         propertyToDelete.remove({ session });
-        propertyToDelete.creater[0].allProperties.pull(propertyToDelete);
+        propertyToDelete.creater.allProperties.pull(propertyToDelete);
 
-        await propertyToDelete.creater[0].save({ session });
+        await propertyToDelete.creater.save({ session });
         await session.commitTransaction();
 
         res.status(200).json({ message: "Property deleted successfully" });
