@@ -7,7 +7,8 @@ const PropertySchema = new mongoose.Schema({
     location:{ type: String, required: true},
     price:{ type: Number, required: true},
     photo:{ type: String, required: true},
-    creater:{ type: mongoose.Schema.Types.ObjectId, ref:'User'},
+    creater:  [{type: mongoose.Schema.Types.ObjectId, ref: 'User'}],
+    
 })
 
 const PropertyModel = mongoose.model('Property', PropertySchema);
