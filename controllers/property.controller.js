@@ -136,9 +136,9 @@ const deleteProperty = async (req, res) => {
         session.startTransaction();
 
         propertyToDelete.remove({ session });
-        propertyToDelete.creater.allProperties.pull(propertyToDelete);
+        propertyToDelete.creater[0].allProperties.pull(propertyToDelete);
 
-        await propertyToDelete.creater.save({ session });
+        await propertyToDelete.creater[0].save({ session });
         await session.commitTransaction();
 
         res.status(200).json({ message: "Property deleted successfully" });
