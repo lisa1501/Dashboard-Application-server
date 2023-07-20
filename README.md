@@ -7,6 +7,21 @@ Developed React-based CRUD a fully functional dashboard app without constraints 
 
 [Click here to see it in action!](https://halisa-yariga-app.netlify.app)
 <br>
+## Installation
+
+- `git clone <this_url> && cd <repo_name>`
+- install npm in the terminals
+  - `npm install`
+- in your terminal, run 
+- `npm start`
+- Next create a .env file in current directory. It should contain the following information.
+```bass
+MONGODB_URL = " "
+CLOUDINARY_CLOUD_NAME = " "
+CLOUDINARY_API_KEY = " "
+CLOUDINARY_API_SECRET = " "
+PORT=8080
+```
 ## 
 
 ![image](https://github.com/lisa1501/Dashboard-Application-server/blob/main/images/signin.png)
