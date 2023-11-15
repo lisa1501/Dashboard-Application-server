@@ -17,10 +17,10 @@ Developed React-based CRUD a fully functional dashboard app without constraints 
 - `npm start`
 - Next create a .env file in current directory. It should contain the following information.
 ```bass
-MONGODB_URL = " "
-CLOUDINARY_CLOUD_NAME = " "
-CLOUDINARY_API_KEY = " "
-CLOUDINARY_API_SECRET = " "
+MONGODB_URL = 
+CLOUDINARY_CLOUD_NAME = 
+CLOUDINARY_API_KEY = 
+CLOUDINARY_API_SECRET = 
 PORT=8080
 ```
 ## 
