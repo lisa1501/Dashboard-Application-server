@@ -9,7 +9,8 @@ Developed React-based CRUD a fully functional dashboard app without constraints 
 <br>
 ## Installation
 
-- `git clone <this_url> && cd <repo_name>`
+- `git clonehttps://github.com/lisa1501/Dashboard-Application-server.git`
+- `cd Dashboard-Application-server`
 - install npm in the terminals
   - `npm install`
 - in your terminal, run 
